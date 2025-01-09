@@ -97,7 +97,7 @@ const RecordModal: React.FC<Props> = ({
       size="lg"
     >
       <Modal.Header closeButton>
-        <Modal.Title>{isEditMode ? "Edit Record" : "Add Record"}</Modal.Title>
+        Записи
       </Modal.Header>
       <Modal.Body>
         <div className="RecordBody">

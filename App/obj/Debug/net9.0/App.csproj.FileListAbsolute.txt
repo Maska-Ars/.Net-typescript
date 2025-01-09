@@ -70,3 +70,4 @@ C:\Users\egorb\OneDrive\Рабочий стол\Studying\node_js_projects\.Net+t
 C:\Users\egorb\OneDrive\Рабочий стол\Studying\node_js_projects\.Net+typescript\app\bin\Debug\net9.0\runtimes\win\lib\net6.0\System.Windows.Extensions.dll
 C:\Users\egorb\OneDrive\Рабочий стол\Studying\node_js_projects\.Net+typescript\app\obj\Debug\net9.0\App.csproj.AssemblyReference.cache
 C:\Users\egorb\OneDrive\Рабочий стол\Studying\node_js_projects\.Net+typescript\app\obj\Debug\net9.0\App.csproj.Up2Date
+C:\Users\egorb\OneDrive\Рабочий стол\Studying\node_js_projects\.Net+typescript\app\obj\Debug\net9.0\App.sourcelink.json
