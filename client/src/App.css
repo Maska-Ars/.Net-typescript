@@ -1,0 +1,63 @@
+#root {
+  max-width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  margin: 0 2rem;
+  padding: 2rem 0;
+  text-align: center;
+}
+.RootDiv{
+  max-width: 100vw;
+  overflow:hidden!important;
+}
+.Releases{
+  font-weight: 450;
+  font-size: 1.7rem;
+  margin-left: 2px;
+}
+.ReleasesCont{
+  display: flex;
+  gap: 2.5rem;
+  flex-wrap: wrap;
+  width: 100%;
+}
+.Page{
+  margin-top: 3rem;
+  width: 100vw !important;
+  display: flex !important;
+  place-items: start !important;
+  height: auto !important;
+}
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+
+
+.read-the-docs {
+  color: #888;
+}
