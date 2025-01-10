@@ -96,9 +96,7 @@ const RecordModal: React.FC<Props> = ({
       }}
       size="lg"
     >
-      <Modal.Header closeButton>
-        Записи
-      </Modal.Header>
+      <Modal.Header closeButton>Записи</Modal.Header>
       <Modal.Body>
         <div className="RecordBody">
           <div style={{ width: "100%" }}>
@@ -165,7 +163,17 @@ const RecordModal: React.FC<Props> = ({
         </div>
       </Modal.Body>
       <Modal.Footer>
-        <Button variant="secondary" onClick={onHide}>
+        <Button
+          variant="secondary"
+          onClick={() => {
+            setRecord(undefined);
+            setSelectedRecord(undefined);
+            setName("");
+            setDurationSeconds(null);
+            setSelectedReleaseId(null);
+            onHide();
+          }}
+        >
           Отменить
         </Button>
         {isEditMode && selectedRecord ? (

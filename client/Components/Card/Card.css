@@ -20,6 +20,8 @@
   border-bottom: 1px solid white;
 }
 .Titles h2{
+    font-size: 1.35rem;
+    white-space: nowrap;
     margin: 0;
 }
 .country{

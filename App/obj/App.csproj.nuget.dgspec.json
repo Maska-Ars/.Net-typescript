@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\egorb\\OneDrive\\Рабочий стол\\Studying\\node_js_projects\\.Net+typescript\\app\\App.csproj": {}
+    "C:\\Users\\egorb\\OneDrive\\Рабочий стол\\Studying\\node_js_projects\\.Net+typescript\\App\\App.csproj": {}
   },
   "projects": {
-    "C:\\Users\\egorb\\OneDrive\\Рабочий стол\\Studying\\node_js_projects\\.Net+typescript\\app\\App.csproj": {
+    "C:\\Users\\egorb\\OneDrive\\Рабочий стол\\Studying\\node_js_projects\\.Net+typescript\\App\\App.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\egorb\\OneDrive\\Рабочий стол\\Studying\\node_js_projects\\.Net+typescript\\app\\App.csproj",
+        "projectUniqueName": "C:\\Users\\egorb\\OneDrive\\Рабочий стол\\Studying\\node_js_projects\\.Net+typescript\\App\\App.csproj",
         "projectName": "App",
-        "projectPath": "C:\\Users\\egorb\\OneDrive\\Рабочий стол\\Studying\\node_js_projects\\.Net+typescript\\app\\App.csproj",
+        "projectPath": "C:\\Users\\egorb\\OneDrive\\Рабочий стол\\Studying\\node_js_projects\\.Net+typescript\\App\\App.csproj",
         "packagesPath": "C:\\Users\\egorb\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\egorb\\OneDrive\\Рабочий стол\\Studying\\node_js_projects\\.Net+typescript\\app\\obj\\",
+        "outputPath": "C:\\Users\\egorb\\OneDrive\\Рабочий стол\\Studying\\node_js_projects\\.Net+typescript\\App\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\egorb\\AppData\\Roaming\\NuGet\\NuGet.Config",

@@ -98,7 +98,7 @@ const ReleaseModal: React.FC<Props> = ({
       <Modal.Header closeButton>Релизы</Modal.Header>
       <Modal.Body>
         <div className="ReleaseBody">
-          <div style={{ width: "100%"}}>
+          <div style={{ width: "100%" }}>
             <ListGroup>
               {entitiesStore.releases.map((release) => (
                 <ListGroup.Item
@@ -154,7 +154,17 @@ const ReleaseModal: React.FC<Props> = ({
         </div>
       </Modal.Body>
       <Modal.Footer>
-        <Button variant="secondary" onClick={onHide}>
+        <Button
+          variant="secondary"
+          onClick={() => {
+            setRelease(undefined);
+            setSelectedRelease(undefined);
+            setName("");
+            setImage(null);
+            setSelectedArtistId(null);
+            onHide();
+          }}
+        >
           Отменить
         </Button>
         {isEditMode && selectedRelease ? (

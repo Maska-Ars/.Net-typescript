@@ -124,7 +124,16 @@ const ArtistModal: React.FC<Props> = ({
         </div>
       </Modal.Body>
       <Modal.Footer>
-        <Button variant="secondary" onClick={onHide}>
+        <Button
+          variant="secondary"
+          onClick={() => {
+            setName("");
+            setArtist(undefined);
+            setSelectedArtist(undefined);
+            setCountry("");
+            onHide();
+          }}
+        >
           Отменить
         </Button>
         {isEditMode && selectedArtist ? (

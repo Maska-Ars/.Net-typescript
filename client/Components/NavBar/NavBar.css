@@ -1,6 +1,7 @@
 .NavCont {
   position: absolute;
   display: flex;
+  z-index: 1000;
   align-items: center;
   padding: 5px 2rem;
   overflow: hidden;
