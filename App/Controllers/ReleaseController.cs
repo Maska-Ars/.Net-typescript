@@ -10,14 +10,9 @@ namespace App.Controllers;
 
 [ApiController]
 [Route("[controller]")]
-public class ReleaseController : ControllerBase
+public class ReleaseController(AppDbContext context) : ControllerBase
 {
-    private readonly AppDbContext _context;
-
-    public ReleaseController(AppDbContext context)
-    {
-        _context = context;
-    }
+    private readonly AppDbContext _context = context;
 
     [HttpGet]
     public async Task<IActionResult> Get()
@@ -26,18 +21,18 @@ public class ReleaseController : ControllerBase
         return Ok(releases);
     }
 
-     [HttpGet("{id}")]
-     public async Task<IActionResult> Get(Guid id)
-      {
-         var release = await _context.Releases.FindAsync(id);
+    [HttpGet("{id}")]
+    public async Task<IActionResult> Get(Guid id)
+    {
+        var release = await _context.Releases.FindAsync(id);
 
         if (release == null)
-       {
-          return NotFound();
-       }
+        {
+            return NotFound();
+        }
 
         return Ok(release);
-     }
+    }
 
     [HttpPost]
     public async Task<IActionResult> Create([FromBody] CreateReleaseRequest request)
@@ -51,7 +46,9 @@ public class ReleaseController : ControllerBase
         };
 
         _context.Releases.Add(release);
+
         await _context.SaveChangesAsync();
+
         return CreatedAtAction(nameof(Get), new { id = release.Id }, release);
     }
 
@@ -59,6 +56,7 @@ public class ReleaseController : ControllerBase
     public async Task<IActionResult> Update(Guid id, [FromBody] UpdateReleaseRequest request)
     {
         var release = await _context.Releases.FindAsync(id);
+
         if (release == null)
         {
             return NotFound();
@@ -73,13 +71,16 @@ public class ReleaseController : ControllerBase
         {
             release.Image = request.Image;
         }
+
         if (request.ArtistId.HasValue)
         {
-        release.ArtistId = request.ArtistId.Value;
+            release.ArtistId = request.ArtistId.Value;
         }
 
         _context.Releases.Update(release);
+
         await _context.SaveChangesAsync();
+
         return Ok(release);
     }
 
@@ -87,12 +88,15 @@ public class ReleaseController : ControllerBase
     public async Task<IActionResult> Delete(Guid id)
     {
         var release = await _context.Releases.FindAsync(id);
+
         if (release == null)
         {
             return NotFound();
         }
+
         _context.Releases.Remove(release);
-       await _context.SaveChangesAsync();
+
+        await _context.SaveChangesAsync();
 
         return NoContent();
     }

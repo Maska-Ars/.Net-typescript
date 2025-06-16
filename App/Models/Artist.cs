@@ -2,15 +2,11 @@ using Microsoft.AspNetCore.SignalR;
 
 namespace App.Models;
 
-public class Artist{
-    public Artist(string name, string country){
-        Name = name;
-        Country = country;
-
-    }
+public class Artist(string name, string country)
+{
     public Guid Id {get; set;}
-    public string Name {get; set;}
-    public string Country {get; set;}
 
+    public string Name { get; set; } = name;
 
+    public string Country { get; set; } = country;
 }

@@ -7,11 +7,13 @@ namespace App.Models;
 public class Release
 {
     public Guid Id { get; set; }
+
     [Required]
     public string Name { get; set; }
+
     public string? Image { get; set; }
 
-      [Required]
+    [Required]
     public Guid ReleaseId { get; set; }
 
     [Required]
@@ -19,5 +21,6 @@ public class Release
 
     [ForeignKey("ArtistId")]
     public Artist? Artist { get; set; } 
+
     public DateTime DateAdded { get; set; } = DateTime.UtcNow;
 }
