@@ -8,12 +8,21 @@ using System.Threading.Tasks;
 
 namespace App.Controllers;
 
+/// <summary>
+/// Контроллер для управления записями (Records).
+/// </summary>
 [ApiController]
 [Route("[controller]")]
 public class RecordController(AppDbContext context) : ControllerBase
 {
     private readonly AppDbContext _context = context;
 
+    /// <summary>
+    /// Возвращает список всех записей, включая информацию о связанных релизах.
+    /// </summary>
+    /// <returns>
+    /// IActionResult: Список объектов Record или ошибку, если произошла ошибка при получении данных из базы данных.
+    /// </returns>
     [HttpGet]
     public async Task<IActionResult> Get()
     {
@@ -21,6 +30,13 @@ public class RecordController(AppDbContext context) : ControllerBase
         return Ok(records);
     }
 
+    /// <summary>
+    /// Возвращает запись по указанному ID, включая информацию о связанном релизе.
+    /// </summary>
+    /// <param name="id">Идентификатор записи (GUID).</param>
+    /// <returns>
+    /// IActionResult: Объект Record или NotFound(), если запись не найдена.
+    /// </returns>
     [HttpGet("{id}")]
     public async Task<IActionResult> Get(Guid id)
     {
@@ -34,6 +50,13 @@ public class RecordController(AppDbContext context) : ControllerBase
         return Ok(record);
     }
 
+    /// <summary>
+    /// Создает новую запись.
+    /// </summary>
+    /// <param name="request">Объект CreateRecordRequest, содержащий данные новой записи.</param>
+    /// <returns>
+    /// IActionResult:  CreatedAtAction с данными новой записи, если создание прошло успешно.
+    /// </returns>
     [HttpPost]
     public async Task<IActionResult> Create([FromBody] CreateRecordRequest request)
     {
@@ -52,6 +75,14 @@ public class RecordController(AppDbContext context) : ControllerBase
         return CreatedAtAction(nameof(Get), new { id = record.Id }, record);
     }
 
+    // <summary>
+    /// Обновляет информацию о записи.  Поля, которые не указаны в UpdateRecordRequest, останутся неизменными.
+    /// </summary>
+    /// <param name="id">Идентификатор записи (GUID).</param>
+    /// <param name="request">Объект UpdateRecordRequest, содержащий данные для обновления.</param>
+    /// <returns>
+    /// IActionResult: Обновленный объект Record или NotFound(), если запись не найдена.
+    /// </returns>
     [HttpPatch("{id}")]
     public async Task<IActionResult> Update(Guid id, [FromBody] UpdateRecordRequest request)
     {
@@ -84,6 +115,13 @@ public class RecordController(AppDbContext context) : ControllerBase
         return Ok(record);
     }
 
+    /// <summary>
+    /// Удаляет запись по указанному ID.
+    /// </summary>
+    /// <param name="id">Идентификатор записи (GUID).</param>
+    /// <returns>
+    /// IActionResult: NoContent(), если удаление прошло успешно, или NotFound(), если запись не найдена.
+    /// </returns>
     [HttpDelete("{id}")]
     public async Task<IActionResult> Delete(Guid id)
     {
